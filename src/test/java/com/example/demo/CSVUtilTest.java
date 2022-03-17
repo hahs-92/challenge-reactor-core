@@ -63,6 +63,4 @@ public class CSVUtilTest {
         assert listFilter.block().size() == 322;
     }
 
-
-
 }

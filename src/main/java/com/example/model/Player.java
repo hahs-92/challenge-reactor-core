@@ -1,7 +1,13 @@
 package com.example.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(value = "players")
 public class Player {
+    @Id
     private String id;
+
     private String name;
     private int age;
     private String icon;
@@ -14,7 +20,6 @@ public class Player {
     }
 
     public Player(
-            String id,
             String name,
             int age,
             String icon,
@@ -23,7 +28,6 @@ public class Player {
             int games,
             String club
     ) {
-        this.id = id;
         this.name = name;
         this.age = age;
         this.icon = icon;
