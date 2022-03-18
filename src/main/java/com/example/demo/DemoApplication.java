@@ -25,8 +25,13 @@ public class DemoApplication implements CommandLineRunner {
 				.subscribe(p -> log.info("[JUGADORES MAYORES DE 34 AÑOS]: " + p.toString()));*/
 
 		//obtener jugadores por club
-		service2.getPlayerByClub("FC Barcelona")
-				.subscribe(p -> log.info("[JUGADORES POR CLUB]: " + p));
+		/*service2.getPlayerByClub("FC Barcelona")
+				.subscribe(p -> log.info("[JUGADORES POR CLUB]: " + p));*/
+
+		//obter nacionalidades
+		service2.getNationalities()
+				.subscribe(n -> log.info("[NATIONALITIES]: " + n));
+
 
 	}
 }
