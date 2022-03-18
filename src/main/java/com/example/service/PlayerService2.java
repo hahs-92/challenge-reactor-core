@@ -3,9 +3,7 @@ package com.example.service;
 import com.example.demo.CsvUtilFile;
 import com.example.demo.Player;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -39,5 +37,14 @@ public class PlayerService2 {
 
         return Flux.fromIterable(players)
                 .filter(p -> Objects.equals(p.getNational(), nationality));
+    }
+
+    public Flux<Player> getTopTenWinnersByNationality(String nationality) {
+        List<Player> players = CsvUtilFile.getPlayers();
+
+        return Flux.fromIterable(players)
+                .filter(p -> Objects.equals(p.getNational(), nationality))
+                .sort((x, y) -> y.getWinners() - x.getWinners())
+                .take(10);
     }
 }

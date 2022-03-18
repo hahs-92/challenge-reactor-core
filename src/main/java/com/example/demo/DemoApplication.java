@@ -33,8 +33,13 @@ public class DemoApplication implements CommandLineRunner {
 				.subscribe(n -> log.info("[NATIONALITIES]: " + n));*/
 
 		//obtener jugadores por nacionalidad
-		service2.getPlayersByNationality("Colombia")
-				.subscribe(p -> log.info("[JUGADORES POR NACIONALIDAD]: " + p.toString()));
+		/*service2.getPlayersByNationality("Colombia")
+				.subscribe(p -> log.info("[JUGADORES POR NACIONALIDAD]: " + p.toString()));*/
+
+		//obtener los 10 jugadores mas ganadores por nacionalidad
+		service2.getTopTenWinnersByNationality("Colombia")
+				.subscribe(p -> log.info("[WINNERS: ]" + p.toString()));
+
 
 
 	}
