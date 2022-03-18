@@ -47,4 +47,14 @@ public class PlayerService2 {
                 .sort((x, y) -> y.getWinners() - x.getWinners())
                 .take(10);
     }
+
+    public Flux getTopTenWinners() {
+        List<Player> players = CsvUtilFile.getPlayers();
+
+        return Flux.fromIterable(players)
+                .sort((x, y) -> y.getWinners() - x.getWinners())
+                .take(10)
+                .groupBy(Player::getNational)
+                .flatMap(p -> p.collectList());
+    }
 }

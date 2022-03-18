@@ -21,25 +21,29 @@ public class DemoApplication implements CommandLineRunner {
 		PlayerService2 service2 = new PlayerService2();
 
 		//obtener jugadores menores de 34 años
-		/*service2.getPlayersGreaterThan34Age()
-				.subscribe(p -> log.info("[JUGADORES MAYORES DE 34 AÑOS]: " + p.toString()));*/
+		service2.getPlayersGreaterThan34Age()
+				.subscribe(p -> log.info("[JUGADORES MAYORES DE 34 AÑOS]: " + p.toString()));
 
 		//obtener jugadores por club
-		/*service2.getPlayerByClub("FC Barcelona")
-				.subscribe(p -> log.info("[JUGADORES POR CLUB]: " + p));*/
+		service2.getPlayerByClub("FC Barcelona")
+				.subscribe(p -> log.info("[JUGADORES POR CLUB]: " + p));
 
 		//obter nacionalidades
-		/*service2.getNationalities()
-				.subscribe(n -> log.info("[NATIONALITIES]: " + n));*/
+		service2.getNationalities()
+				.subscribe(n -> log.info("[NATIONALITIES]: " + n));
 
 		//obtener jugadores por nacionalidad
-		/*service2.getPlayersByNationality("Colombia")
-				.subscribe(p -> log.info("[JUGADORES POR NACIONALIDAD]: " + p.toString()));*/
+		service2.getPlayersByNationality("Colombia")
+				.subscribe(p -> log.info("[JUGADORES POR NACIONALIDAD]: " + p.toString()));
 
 		//obtener los 10 jugadores mas ganadores por nacionalidad
 		service2.getTopTenWinnersByNationality("Colombia")
-				.subscribe(p -> log.info("[WINNERS: ]" + p.toString()));
+				.subscribe(p -> log.info("[WINNERS_BY_NATIONALITY: ]" + p.toString()));
 
+
+		//obtener los 10 jugadores mas ganadores
+		service2.getTopTenWinners()
+				.subscribe(p -> log.info("[WINNERS: ]" + p.toString()));
 
 
 	}
