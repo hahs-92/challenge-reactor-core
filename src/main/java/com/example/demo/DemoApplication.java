@@ -29,8 +29,12 @@ public class DemoApplication implements CommandLineRunner {
 				.subscribe(p -> log.info("[JUGADORES POR CLUB]: " + p));*/
 
 		//obter nacionalidades
-		service2.getNationalities()
-				.subscribe(n -> log.info("[NATIONALITIES]: " + n));
+		/*service2.getNationalities()
+				.subscribe(n -> log.info("[NATIONALITIES]: " + n));*/
+
+		//obtener jugadores por nacionalidad
+		service2.getPlayersByNationality("Colombia")
+				.subscribe(p -> log.info("[JUGADORES POR NACIONALIDAD]: " + p.toString()));
 
 
 	}

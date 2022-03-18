@@ -32,6 +32,12 @@ public class PlayerService2 {
         return Flux.fromIterable(players)
                 .map(Player::getNational)
                 .distinct();
+    }
 
+    public Flux<Player> getPlayersByNationality(String nationality) {
+        List<Player> players = CsvUtilFile.getPlayers();
+
+        return Flux.fromIterable(players)
+                .filter(p -> Objects.equals(p.getNational(), nationality));
     }
 }

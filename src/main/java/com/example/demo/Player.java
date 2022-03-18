@@ -105,16 +105,4 @@ public class Player {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Player player = (Player) o;
-        return id == player.id && age == player.age && winners == player.winners && games == player.games && Objects.equals(name, player.name) && Objects.equals(icon, player.icon) && Objects.equals(national, player.national) && Objects.equals(club, player.club);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, age, icon, national, winners, games, club);
-    }
 }
