@@ -45,6 +45,7 @@ public class CSVUtilTest {
     @Test
     void reactive_filtrarJugadoresMayoresA35(){
         List<Player> list = CsvUtilFile.getPlayers();
+        System.out.println("[players]: " + list );
         Flux<Player> listFlux = Flux.fromStream(list.parallelStream()).cache();
         Mono<Map<String, Collection<Player>>> listFilter = listFlux
                 .filter(player -> player.age >= 35)

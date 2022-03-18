@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Objects;
+
 public class Player {
     public int id;
     public String name;
@@ -87,5 +89,32 @@ public class Player {
 
     public void setClub(String club) {
         this.club = club;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", icon='" + icon + '\'' +
+                ", national='" + national + '\'' +
+                ", winners=" + winners +
+                ", games=" + games +
+                ", club='" + club + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Player player = (Player) o;
+        return id == player.id && age == player.age && winners == player.winners && games == player.games && Objects.equals(name, player.name) && Objects.equals(icon, player.icon) && Objects.equals(national, player.national) && Objects.equals(club, player.club);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, age, icon, national, winners, games, club);
     }
 }

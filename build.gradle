@@ -21,7 +21,7 @@ dependencies {
 	testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.7.1")
 	compile 'com.opencsv:opencsv:5.3'
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb-reactive
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb-reactive', version: '2.6.2'
+	//implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb-reactive', version: '2.6.2'
 
 }
 

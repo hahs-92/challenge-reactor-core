@@ -2,12 +2,14 @@ package com.example.demo;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
+import org.springframework.stereotype.Component;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 
 public class CsvUtilFile {
     private CsvUtilFile(){}
@@ -31,6 +33,7 @@ public class CsvUtilFile {
            return list;
 
         } catch (IOException | CsvException e) {
+            System.out.println("kaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             throw new IllegalArgumentException(e.getMessage());
         }
     }
